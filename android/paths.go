@@ -1781,6 +1781,8 @@ func modulePartition(ctx ModuleInstallPathContext, os OsType) string {
 			partition = ctx.DeviceConfig().SystemExtPath()
 		} else if ctx.InstallInRoot() {
 			partition = "root"
+		} else if ctx.ProductOverlaySpecific() {
+			partition = ctx.DeviceConfig().ProductOverlayPath()
 		} else {
 			partition = "system"
 		}
