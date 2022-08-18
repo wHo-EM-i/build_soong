@@ -117,7 +117,7 @@ var r8, r8RE = pctx.MultiCommandRemoteStaticRules("r8",
 		Command: `rm -rf "$outDir" && mkdir -p "$outDir" && ` +
 			`rm -f "$outDict" && rm -rf "${outUsageDir}" && ` +
 			`mkdir -p $$(dirname ${outUsage}) && ` +
-			`$r8Template${config.R8Cmd} ${config.DexFlags} -injars $in --output $outDir ` +
+			`$r8Template${config.R8Cmd} -JXmx6G ${config.DexFlags} -injars $in --output $outDir ` +
 			`--no-data-resources ` +
 			`-printmapping ${outDict} ` +
 			`-printusage ${outUsage} ` +
